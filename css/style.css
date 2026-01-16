@@ -1,0 +1,598 @@
+/* ---------- VARIABLES ---------- */
+:root {
+    --black: #0d0d0d;
+    --black-soft: #151515;
+    --gold: #d2b278;
+    --gold-light: #e8d8b5;
+    --white: #f5f5f5;
+    --gray: #cccccc;
+
+    --font-main: "Playfair Display", serif;
+    --font-ui: "Inter", sans-serif;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-ui);
+    background: var(--black);
+    color: var(--white);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-main);
+    color: var(--gold-light);
+    margin-top: 0;
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    color: var(--gold-light);
+}
+
+/* ---------- NAV ---------- */
+.nav {
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-main);
+    font-size: 24px;
+    color: var(--gold-light);
+}
+
+.nav-wrapper {
+    position: relative;
+    z-index: 9999;
+}
+
+.menu a {
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center:
+    overflow: hidden;
+}
+
+/*Фоновое изображение*/
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/hero/hero.jpg') center/cover no-repeat; 
+    z-index: -2;
+}
+
+/*Эффект зеркала - Вариант А (мой стиль)*/
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -35%;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: inherit;
+    background-size: cover;
+    background-position: center bottom;
+    transform: scaleY(-1);
+    opacity: 0.35;
+    filter: blur(6px);
+    z-index: -1;
+}
+
+/*Контент*/
+.hero-content {
+position: relative;
+z-index: 5;
+width: 90%;
+max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: var(--gold-light);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid
+var(--gold);
+    border-radius: 4px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.8));
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-main {
+    padding: 12px 26px;
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.btn-main:hover {
+    background: var(--gold-light);
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+    padding: 100px 5% 70px;
+    background: var(--black-soft);
+}
+
+.about-inner {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: var(--gray);
+}
+
+/* ---------- ICON GRID ---------- */
+.icons {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.icon-card {
+    background: #111;
+    padding: 35px 25px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.icon-card:hover {
+    transform: translateY(-4px);
+}
+
+/* ---------- METAMORFOZY ---------- */
+.metamorfozy {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+/*сетка для metamorfozy*/
+.meta-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 20px;
+     padding: 20px;
+     justify-content: center;
+     flex-wrap: wrap; /*чтобы не наезжали друг на друга*/
+}
+
+.meta-grid img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.meta-grid img:hover {
+    opacity: 0.7;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 24px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 4px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    padding: 100px 5%;
+    text-align: center;
+    background: var(--black-soft);
+}
+
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.btn-ghost {
+    padding: 10px 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background: #0b0b0b;
+    padding: 60px 5%;
+}
+
+.footer-inner {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer a {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gray);
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 800px) {
+    .hero h1 { font-size: 36px; }
+    .menu a { margin-left: 15px; }
+}
+@media (max-width:786px) {
+     .meta-grid {
+        grid-template-columns:
+    1fr;
+        gap: 15px;
+     }
+
+     .meta-grid img {
+         height: 200px;
+     }
+}
+.o-mnie-section {
+    padding: 100px 5%;
+}
+
+.o-mnie-inner {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: flex-start;
+}
+
+.o-mnie-photo {
+    width: 380px;
+    border-radius: 6px;
+}
+
+.o-mnie-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+@media (max-width: 850px) {
+    .o-mnie-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .o-mnie-photo {
+        width: 100%;
+    }
+}
+.zabiegi-grid {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.zabieg-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.zabieg-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.zabieg-card:hover {
+    transform: translateY(-6px);
+}
+
+.price {
+    display: block;
+    margin-top: 10px;
+    color: var(--gold);
+    font-weight: 600;
+}
+.contact-section {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* --- GOLD GLOW EFFECT --- */
+.gold-glow {
+  color: #E9D8A6;
+  transition: 0.35s ease;
+  text-shadow: 0 0 0px rgba(203,164,106,0.0);
+}
+
+.gold-glow:hover {
+  color: #F1E3BE;
+  text-shadow: 
+    0 0 6px rgba(203,164,106,0.55),
+    0 0 12px rgba(203,164,106,0.35);
+  transform: translateY(-2px);
+}
+.gold-glow-strong {
+  color: #E9D8A6;
+  letter-spacing: 0.5px;
+  transition: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gold-glow-strong:hover {
+  color: #F7EED4;
+  text-shadow:
+    0 0 10px rgba(203,164,106,0.75),
+    0 0 20px rgba(203,164,106,0.45),
+    0 0 32px rgba(203,164,106,0.25);
+  transform: translateY(-3px) scale(1.02);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Desktop menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #d7b56d;
+}
+
+/*Desktop nav */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+}
+    
+    /* Mobile menu */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        padding-top: 80px;
+        transition: 0.4s;
+    }
+
+    .nav-links a {
+        margin: 20px 0;
+        font-size: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        right: 0;
+        display: block;
+    }
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader .dust {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeDust 0.8s ease forwards;
+}
+
+@keyframes fadeDust {
+    from { opacity: 0; transform: scale(0.8);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+.hide-loader {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s ease;
+}
+
+/* .loader { ... }
+.loader .dust {... } */
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+/*Общее правило для всех изображений в секциях*/
+section img {
+   width: 100%;
+   max-width: 320px;
+   /*управление размером*/
+   height: auto;
+   border-radius: 10px;
+   display: block;
+   box-shadow: 0 10px 30 px;
+}
+
